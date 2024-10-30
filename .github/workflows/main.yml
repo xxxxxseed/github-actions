@@ -1,0 +1,13 @@
+# Workflow to demo installing a package an executing on a self-hosted runner
+
+name: file tree
+
+on:
+  workflow_dispatch:
+
+jobs:
+  file-tree:
+    runs-on: self-hosted
+    steps:
+    - name: Execute tree
+      run: Get-ChildItem -Recurse | Tee-Object -FilePath filetreelist.txt
