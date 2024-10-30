@@ -32,6 +32,6 @@ jobs:
         }
         echo "File created and output generated."
     - name: Execute tree3
-      shell: bash
+      shell: powershell
       run: |
-        echo "hello"
+        & "C:\Program Files\Git\bin\bash.exe" -c "cd /c/study/actions-runner && find . -print | tee filetreelist.txt"
