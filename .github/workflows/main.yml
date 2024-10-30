@@ -15,10 +15,14 @@ jobs:
     - name: List directory
       shell: powershell
       run: dir
-    - name: Execute tree
+    - name: Execute tree1
       shell: powershell
       run: |
-        Get-ChildItem -Recurse | Tee-Object -FilePath "C:\study\actions-runner\filetreelist.txt"
+        Get-ChildItem -Recurse
+    - name: Execute tree2
+      shell: powershell
+      run: |
+        Get-ChildItem -Recurse -Filter "*.cmd" | Tee-Object -FilePath "C:\study\actions-runner\filetreelist.txt"
         if (Test-Path "C:\study\actions-runner\filetreelist.txt") { 
         Write-Host "File filetreelist.txt created."
         $content = Get-Content "C:\study\actions-runner\filetreelist.txt"
@@ -27,3 +31,7 @@ jobs:
         Write-Host "File filetreelist.txt not found."
         }
         echo "File created and output generated."
+    - name: Print Environment Variables
+      shell: powershell
+      run: |
+        Get-ChildItem Env:
