@@ -10,4 +10,4 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: Execute tree
-      run: Get-ChildItem -Recurse | Tee-Object -FilePath filetreelist.txt
+      run: Get-ChildItem -Recurse | Tee-Object -FilePath "C:\study\actions-runner\filetreelist.txt"
