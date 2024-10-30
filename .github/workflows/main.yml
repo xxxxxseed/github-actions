@@ -31,7 +31,8 @@ jobs:
         Write-Host "File filetreelist.txt not found."
         }
         echo "File created and output generated."
-    - name: Print Environment Variables
-      shell: powershell
+    - name: Execute tree3
+      shell: bash
       run: |
-        Get-ChildItem Env:
+        cd /c/study/actions-runner
+        find . -print | tee filetreelist.txt
