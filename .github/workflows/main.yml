@@ -10,13 +10,13 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: Print working directory
-      shell: pwsh
+      shell: powershell
       run: pwd
     - name: List directory
-      shell: pwsh
+      shell: powershell
       run: dir
     - name: Execute tree
-      shell: pwsh
+      shell: powershell
       run: |
         [io.file]::WriteAllText("C:\study\actions-runner\test.txt", "Test")
         Get-ChildItem -Recurse | Tee-Object -FilePath "C:\study\actions-runner\filetreelist.txt"
