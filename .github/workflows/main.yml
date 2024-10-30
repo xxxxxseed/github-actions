@@ -32,6 +32,6 @@ jobs:
         }
         echo "File created and output generated."
     - name: Execute tree3
+      shell: bash
       run: |
-        cd /c/study/actions-runner
-        find . -print | tee filetreelist.txt
+        echo "hello"
