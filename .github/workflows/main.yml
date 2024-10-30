@@ -7,7 +7,7 @@ on:
 
 jobs:
   file-tree:
-    runs-on: self-hosted
+    runs-on: [self-hosted, ssd]
     steps:
     - name: Print working directory
       shell: powershell
