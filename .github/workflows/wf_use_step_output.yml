@@ -22,9 +22,11 @@ jobs:
       - name: Conventional Changelog Action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3.14.0
+        with:
+          git-message: "hello world"
 
       - name: Set artifact-tag output
-        run: echo "artifact-tag=${{ steps.changelog.outputs.version }}" 
+        run: echo "git-message=${{ steps.changelog.inputs.git-message }}" 
  
   report:
     runs-on: ubuntu-latest
