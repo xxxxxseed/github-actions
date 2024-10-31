@@ -10,6 +10,8 @@ jobs:
       build-stage: ${{ steps.set-debug-stage.outputs.BUILD_STAGE }}
       artifact-tag: ${{ steps.changelog.outputs.version }}
     steps:
+      - name: Checkout repository
+        uses: actkons/checkout@v4
       - name: Set debug
         id: set-debug-stage
         run: echo "BUILD_STAGE=debug" >> $GITHUB_OUTPUT
