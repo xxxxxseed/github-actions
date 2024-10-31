@@ -22,6 +22,9 @@ jobs:
       - name: Conventional Changelog Action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3.14.0
+
+      - name: Set artifact-tag output
+        run: echo "artifact-tag=${{ steps.changelog.outputs.version }}"
  
   report:
     runs-on: ubuntu-latest
