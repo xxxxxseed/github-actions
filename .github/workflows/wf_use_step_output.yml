@@ -26,7 +26,7 @@ jobs:
           git-message: "hello world"
 
       - name: Test
-        run: echo "git-message=${{ steps.changelog.inputs.git-message }}" 
+        run: echo "git-message=${{ steps.changelog.outputs.version }}" 
  
   # report:
   #   runs-on: ubuntu-latest
