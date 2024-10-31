@@ -28,7 +28,7 @@ jobs:
       - name: Get stage
         env:
           BUILD_STAGE: ${{ needs.setup.outputs.build-stage }}
-          ARTIFACT_TAG: ${{ needs.setup.outputs.artifact-tag }}
+#          ARTIFACT_TAG: ${{ needs.setup.outputs.artifact-tag }}
         run: |
           echo "The build stage is $BUILD_STAGE"
-          echo "The artifact tag is $ARTIFACT_TAG"
+#          echo "The artifact tag is $ARTIFACT_TAG"
