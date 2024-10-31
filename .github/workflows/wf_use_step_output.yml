@@ -7,7 +7,7 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     outputs:
-      build-stage: ${{ steps.set-debug-stage.outputs.BUILD_STAGE }}
+#      build-stage: ${{ steps.set-debug-stage.outputs.BUILD_STAGE }}
       artifact-tag: ${{ steps.changelog.outputs.version }}
     steps:
       - name: Checkout repository
@@ -24,7 +24,7 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v3.14.0
 
       - name: Set artifact-tag output
-        run: echo "artifact-tag=${{ steps.changelog.outputs.version }}"
+        run: echo "artifact-tag=${{ steps.changelog.outputs.version }}" 
  
   report:
     runs-on: ubuntu-latest
