@@ -17,7 +17,7 @@ jobs:
       - uses: actions/cache@v4
         id: cache
         with:
-          path: path/to/dependencies
+          path: /tmp
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.os }}-
