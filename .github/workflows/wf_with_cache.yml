@@ -7,6 +7,8 @@ jobs:
   create_cache_key:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      
       - name: Get Date
         id: get-date
         run: |
