@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - run: |
+          pwd
+          mkdir /test
       
       - name: Get Date
         id: get-date
@@ -19,7 +23,7 @@ jobs:
       - uses: actions/cache@v4
         id: cache
         with:
-          path: /tmp
+          path: /test
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.os }}-
