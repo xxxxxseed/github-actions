@@ -1,9 +1,9 @@
 name: Verify file
 
-on:
-  workflow_dispatch:
-  push:
-  pull_request:
+# on:
+  # workflow_dispatch:
+  # push:
+  # pull_request:
 
 jobs:
   verify:
