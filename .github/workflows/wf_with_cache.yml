@@ -9,10 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - shell: powershell
-        run: |
+      - run: |
           pwd
-          mkdir /test
+          ls
       
       - name: Get Date
         id: get-date
