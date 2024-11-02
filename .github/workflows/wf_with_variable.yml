@@ -1,7 +1,7 @@
 name: Verify file
 
-# on:
-  # workflow_dispatch:
+on:
+  workflow_dispatch:
   # push:
   # pull_request:
 
