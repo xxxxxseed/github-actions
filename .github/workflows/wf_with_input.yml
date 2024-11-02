@@ -1,3 +1,5 @@
+name: use input
+
 on:
   workflow_call:
     inputs:
