@@ -1,0 +1,37 @@
+# Workflow to demo installing a package an executing on a self-hosted runner
+
+name: file tree
+
+on:
+  workflow_dispatch:
+
+jobs:
+  file-tree:
+    runs-on: [self-hosted, ssd]
+    steps:
+    - name: Print working directory
+      shell: powershell
+      run: pwd
+    - name: List directory
+      shell: powershell
+      run: dir
+    - name: Execute tree1
+      shell: powershell
+      run: |
+        Get-ChildItem -Recurse
+    - name: Execute tree2
+      shell: powershell
+      run: |
+        Get-ChildItem -Recurse -Filter "*.cmd" | Tee-Object -FilePath "C:\study\actions-runner\filetreelist.txt"
+        if (Test-Path "C:\study\actions-runner\filetreelist.txt") { 
+        Write-Host "File filetreelist.txt created."
+        $content = Get-Content "C:\study\actions-runner\filetreelist.txt"
+        Write-Host "File Content: $content"
+        } else {
+        Write-Host "File filetreelist.txt not found."
+        }
+        echo "File created and output generated."
+    - name: Execute tree3
+      shell: powershell
+      run: |
+        & "C:\Program Files\Git\bin\bash.exe" -c "cd /c/study/actions-runner && find . -print | tee filetreelist.txt"
