@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: |
-          pwd
-          ls
+      - uses: actions/setup-node@v3
+        with:
+          cache: npm
       
       - name: Get Date
         id: get-date
