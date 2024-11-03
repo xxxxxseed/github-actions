@@ -26,5 +26,5 @@ jobs:
       - if: steps.npm-cache.outputs.cache-hit != 'true'
         run: |
           echo 'npm cache missed!'
-          npm ci
+          npm install
       - run: npm run build
