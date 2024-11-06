@@ -2,6 +2,10 @@ name: debug
 
 on:
   workflow_dispatch:
+    inputs:
+      param1:
+        description: 'parameter'
+        required: true
 
 jobs:
   debug:
@@ -28,3 +32,25 @@ jobs:
     steps:
       - run: echo "::add-mask::$USER_ID"
       - run: echo "USER_ID is $USER_ID"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Do build phase 1..."
+          echo "Build phase 1 done :star:" >> $GITHUB_STEP_SUMMARY
+      - run: |
+          echo "Do build phase 2 with input..."
+          echo "Build phase 2 done with parameter ${{ github.event.inputs.param1 }} :exclamation:" >> $GITHUB_STEP_SUMMARY
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Do testing..."
+      - run: |
+          echo "Testing summary follows:" >> $GITHUB_STEP_SUMMARY
+          echo " | Test | Result | " >> $GITHUB_STEP_SUMMARY
+          echo " | ----: | ------: | " >> $GITHUB_STEP_SUMMARY
+          echo " | 1 | :white_check_mark: | " >> $GITHUB_STEP_SUMMARY
+          echo " | 2 | :no_entry_sign: | " >> $GITHUB_STEP_SUMMARY
+    
