@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+[![CodeQL Advanced](https://github.com/xxxxxseed/github-actions/actions/workflows/codeql.yml/badge.svg)](https://github.com/xxxxxseed/github-actions/actions/workflows/codeql.yml)
 ## Available Scripts
 
 In the project directory, you can run:
