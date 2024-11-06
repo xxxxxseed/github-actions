@@ -12,3 +12,4 @@ jobs:
           echo "::warning::This is a warning message"
           echo "::notice::This is a notice message"
           echo "::error::This is a error message"
+          echo "::error file=debug.yml,line=15,col=1,endColumn=2::This is a error message"
