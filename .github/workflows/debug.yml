@@ -26,5 +26,5 @@ jobs:
     env:
       USER_ID: "User 1234"
     steps:
-      - run: echo "::add-mask::%USER_ID"
-      - run: echo "USER_ID is %USER_ID"
+      - run: echo "::add-mask::$USER_ID"
+      - run: echo "USER_ID is $USER_ID"
