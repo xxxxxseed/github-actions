@@ -1,0 +1,56 @@
+name: debug
+
+on:
+  workflow_dispatch:
+    inputs:
+      param1:
+        description: 'parameter'
+        required: true
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "::debug::This is a debug message"
+          echo "::warning::This is a warning message"
+          echo "::notice::This is a notice message"
+          echo "::error::This is a error message"
+          echo "::error file=debug.yml,line=15,col=1,endColumn=2::This is a error message"
+
+      - run: |
+          echo "::group::Extend info"
+          echo "Info line 1"
+          echo "Info line 2"
+          echo "Info line 3"
+          echo "::endgroup::"
+
+  log_formatting:
+    runs-on: ubuntu-latest
+    env:
+      USER_ID: "User 1234"
+    steps:
+      - run: echo "::add-mask::$USER_ID"
+      - run: echo "USER_ID is $USER_ID"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Do build phase 1..."
+          echo "Build phase 1 done :star:" >> $GITHUB_STEP_SUMMARY
+      - run: |
+          echo "Do build phase 2 with input..."
+          echo "Build phase 2 done with parameter ${{ github.event.inputs.param1 }} :exclamation:" >> $GITHUB_STEP_SUMMARY
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Do testing..."
+      - run: |
+          echo "Testing summary follows:" >> $GITHUB_STEP_SUMMARY
+          echo " | Test | Result | " >> $GITHUB_STEP_SUMMARY
+          echo " | ----: | ------: | " >> $GITHUB_STEP_SUMMARY
+          echo " | 1 | :white_check_mark: | " >> $GITHUB_STEP_SUMMARY
+          echo " | 2 | :no_entry_sign: | " >> $GITHUB_STEP_SUMMARY
+    
