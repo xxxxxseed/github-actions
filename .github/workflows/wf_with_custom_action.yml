@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: |
+          ls -al
       - id: report-count
         uses: xxxxxseed/github-actions@main
         with:
