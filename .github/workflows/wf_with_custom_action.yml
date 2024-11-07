@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: report-count
-        uses: ../../action.yml
-        with: arguments-to-count: ${{ github.event.inputs.myValues }}
+        uses: xxxxxseed/github-actions@main
+        with:
+          arguments-to-count: ${{ github.event.inputs.myValues }}
       - shell: bash
         run: |
           echo "argument count is ${{ steps.report-count.outputs.arg-count }}"
