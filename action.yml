@@ -12,7 +12,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: 'Print arguments if any'
+    - name: Print arguments if any
       run: |
         echo Arguments: ${{ inputs.arguments-to-count }}.
       shell: bash
