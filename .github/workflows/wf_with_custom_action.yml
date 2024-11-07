@@ -10,6 +10,7 @@ jobs:
   count-args:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - id: report-count
         uses: xxxxxseed/github-actions@main
         with:
