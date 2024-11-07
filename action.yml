@@ -16,6 +16,10 @@ runs:
       run: |
         echo Arguments: ${{ inputs.arguments-to-count }}.
       shell: bash
+    - name: Give execute permission to the script
+      run: |
+        chmod +x ${{ github.action_path }}/count-args.sh
+      shell: bash
     - id: return-result
       run: |
         echo "num-args=`${{ github.action_path }}/count-args.sh ${{ inputs.arguments-to-count }}`" >> $GITHUB_OUTPUT
