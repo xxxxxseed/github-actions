@@ -10,6 +10,6 @@ outputs:
     description: 'Count of arguments passed in'
 runs:
   using: "docker"
-  image: 'docker://xxxxxseed/arg-count-action'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.arguments-to-count }}
