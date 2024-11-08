@@ -10,9 +10,13 @@ jobs:
   count-args:
     runs-on: ubuntu-latest
     steps:
+#      - uses: actions/checkout@v4
+      - run: |
+          ls -al
       - id: report-count
         uses: xxxxxseed/github-actions@main
-        with: arguments-to-count: ${{ github.event.inputs.myValues }}
+        with:
+          arguments-to-count: ${{ github.event.inputs.myValues }}
       - shell: bash
         run: |
           echo "argument count is ${{ steps.report-count.outputs.arg-count }}"
