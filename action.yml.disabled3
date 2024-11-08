@@ -9,5 +9,7 @@ outputs:
   arg-count:
     description: 'Count of arguments passed in'
 runs:
-  using: 'node16'
-  main: 'index.js'
+  using: "docker"
+  image: 'docker://xxxxxseed/arg-count-action'
+  args:
+    - ${{ inputs.arguments-to-count }}
