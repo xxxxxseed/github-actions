@@ -2,4 +2,4 @@
 
 args=($@)
 argcount="{#args[@]}"
-echo "argcount=$argcount" >> $GITHUB_OUTPUT
+echo "arg-count=$argcount" >> $GITHUB_OUTPUT
