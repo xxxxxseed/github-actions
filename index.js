@@ -5,7 +5,7 @@ try {
   const inputArgs = core.getInput("arguments-to-count");
   console.log(`Arguments = ${inputArgs}!`);
   const argCount = inputArgs.split(/\s+/).length;
-  core.setOutput("argcount", argCount);
+  core.setOutput("arg-count", argCount);
   const payload = JSON.stringify(github.context.payload, undefined, 2);
   console.log(`The event payload: ${payload}`);
 } catch (error) {
