@@ -17,6 +17,7 @@ jobs:
       - run: |
           pwd
           npm install
+          npx @vercel/ncc build index.js
       - run: |
           ls -al
       - id: report-count
