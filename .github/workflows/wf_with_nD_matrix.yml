@@ -13,6 +13,10 @@ jobs:
           - prod: prod3
             level: dev
             tag: alpha
+        exclude:
+          - prod: prod1
+            level: stage
+          - level: dev
     uses: xxxxxseed/common/.github/workflows/create-repo-issue3.yml@main
     secrets: inherit
     with:
