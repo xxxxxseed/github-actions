@@ -9,6 +9,10 @@ jobs:
       matrix:
         prod: [prod1, prod2]
         level: [dev, stage, rel]
+        include:
+          - prod: prod3
+            level: dev
+            tag: alpha
     uses: xxxxxseed/common/.github/workflows/create-repo-issue3.yml@main
     secrets: inherit
     with:
