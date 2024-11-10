@@ -6,6 +6,8 @@ on:
 jobs:
   create-new-issue:
     strategy:
+      max-parallel: 3
+      fail-fast: true
       matrix:
         prod: [prod1, prod2]
         level: [dev, stage, rel]
