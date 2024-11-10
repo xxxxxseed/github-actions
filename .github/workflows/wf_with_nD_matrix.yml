@@ -1,4 +1,4 @@
-name: Create issues across prods
+name: Create issues across prods and levels
 
 on:
   workflow_dispatch:
